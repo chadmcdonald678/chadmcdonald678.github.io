@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>My Portfolio</title>
-    <!-- Updated Tailwind v4 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS v4 Engine -->
+    <script src="https://jsdelivr.net"></script>
     <style type="text/tailwindcss">
         @theme {
             --color-landed-dark: #1c1d26;
             --color-landed-panel: #272936;
         }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-landed-dark text-gray-300">
-    <!-- Your HTML content here -->
-    <h1 class="text-white text-3xl">Hello World</h1>
+<body class="bg-landed-dark text-gray-300 font-sans antialiased">
+    <!-- Rest of the HTML structure for header, banner, video work, and contact section -->
 </body>
 </html>
