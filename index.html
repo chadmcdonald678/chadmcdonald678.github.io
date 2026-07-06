@@ -2,107 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <!-- Tailwind CSS handles all styling natively without external asset folders -->
-    <script src="https://tailwindcss.com"></script>
-    <style>
-        /* Smooth scrolling mechanics */
-        html { scroll-behavior: smooth; }
-        /* Landed background color tones */
-        .bg-landed-dark { background-color: #1c1d26; }
-        .bg-landed-panel { background-color: #272936; }
+    <!-- Updated Tailwind v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-landed-dark: #1c1d26;
+            --color-landed-panel: #272936;
+        }
     </style>
 </head>
-<body class="bg-landed-dark text-gray-300 font-sans antialiased">
-
-    <!-- Top Navigation Bar (Fixed at top) -->
-    <header class="fixed top-0 left-0 w-full bg-[#1c1d26]/90 backdrop-blur-md z-50 border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-white font-black tracking-wider uppercase text-lg">Landed</a>
-            <nav class="flex gap-6 text-xs font-bold tracking-widest uppercase">
-                <a href="#work" class="text-white hover:text-[#e44c65] transition">Work</a>
-                <a href="#contact" class="text-gray-400 hover:text-[#e44c65] transition">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner / Hero Section (Matches the high-impact top of Landed) -->
-    <section class="relative pt-40 pb-24 text-center border-b border-white/10 overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(28, 29, 38, 0.75), rgba(28, 29, 38, 0.95)), url('https://unsplash.com');">
-        <div class="max-w-3xl mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-wider leading-tight">
-                The future has landed
-            </h1>
-            <p class="text-base md:text-lg text-gray-400 mt-4 max-w-xl mx-auto leading-relaxed">
-                Welcome to my creative space. I specialize in high-energy commercial spots, cinematic color grading, and dynamic narrative pacing.
-            </p>
-            <div class="mt-8">
-                <a href="#work" class="inline-block bg-[#e44c65] hover:bg-[#d33c54] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded transition">
-                    View Featured Work
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Showcases (Matches the asymmetrical "Spotlight" alternating rows of Landed) -->
-    <main id="work" class="max-w-5xl mx-auto px-6 py-16 space-y-16">
-        
-        <!-- Video Spotlight Row 1 (Video Right, Text Left) -->
-        <section class="flex flex-col md:flex-row items-center gap-10 border-b border-white/5 pb-16">
-            <div class="w-full md:w-1/2 order-2 md:order-1">
-                <h2 class="text-2xl font-extrabold text-white tracking-tight mb-4">Commercial Brand Story</h2>
-                <p class="text-gray-400 leading-relaxed mb-4">
-                    High-pace narrative editing mixed with dynamic speed ramps and stylized commercial layouts. This spotlight frame mirrors the classic text alignments inside Landed.
-                </p>
-                <div class="text-xs font-bold uppercase tracking-wider text-[#e44c65]">
-                    Role: Lead Editor & Colorist
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 order-1 md:order-2">
-                <!-- Embedded Responsive Video Player Box -->
-                <div class="relative overflow-hidden rounded-lg aspect-video shadow-2xl border border-white/10">
-                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Video Spotlight Row 2 (Video Left, Text Right) -->
-        <section class="flex flex-col md:flex-row items-center gap-10 border-b border-white/5 pb-16">
-            <div class="w-full md:w-1/2">
-                <!-- Embedded Responsive Video Player Box -->
-                <div class="relative overflow-hidden rounded-lg aspect-video shadow-2xl border border-white/10">
-                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2">
-                <h2 class="text-2xl font-extrabold text-white tracking-tight mb-4">Cinematic Travel Documentary</h2>
-                <p class="text-gray-400 leading-relaxed mb-4">
-                    Immersive environmental audio setups mixed directly with rich sweeping vistas. Styled with clean padding systems to stay completely responsive across desktop screens and phones.
-                </p>
-                <div class="text-xs font-bold uppercase tracking-wider text-[#e44c65]">
-                    Role: Director & Sound Designer
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Contact CTA Footer Section (Matches Landed's lower block style) -->
-    <section id="contact" class="bg-landed-panel text-center py-16 border-t border-white/10">
-        <div class="max-w-xl mx-auto px-6">
-            <h2 class="text-2xl font-extrabold text-white uppercase tracking-wider mb-2">Get In Touch</h2>
-            <p class="text-gray-400 mb-8 text-sm">Ready to bring your next visual production project to life?</p>
-            
-            <a href="mailto:yourname@example.com" class="inline-block border border-white/20 hover:border-[#e44c65] text-white font-bold tracking-widest text-xs uppercase px-8 py-3.5 rounded transition">
-                yourname@example.com
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer Copyright Tag -->
-    <footer class="text-center py-8 text-xs text-gray-600 bg-landed-dark">
-        <p>&copy; Untitled. Design based on Landed via HTML5 UP.</p>
-    </footer>
-
+<body class="bg-landed-dark text-gray-300">
+    <!-- Your HTML content here -->
+    <h1 class="text-white text-3xl">Hello World</h1>
 </body>
 </html>
