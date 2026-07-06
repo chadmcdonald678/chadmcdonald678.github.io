@@ -2,143 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Portfolio | Creative Editor & Videographer</title>
-    <!-- Tailwind CSS for sleek styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>My Portfolio</title>
+    <!-- Tailwind CSS handles all styling natively without external asset folders -->
     <script src="https://tailwindcss.com"></script>
     <style>
-        /* Smooth transitions for interactive video cards */
-        .video-card:hover .play-overlay { opacity: 1; }
+        /* Smooth scrolling mechanics */
         html { scroll-behavior: smooth; }
+        /* Landed background color tones */
+        .bg-landed-dark { background-color: #1c1d26; }
+        .bg-landed-panel { background-color: #272936; }
     </style>
 </head>
-<body class="bg-[#0b0c10] text-[#c5c6c7] font-sans antialiased">
+<body class="bg-landed-dark text-gray-300 font-sans antialiased">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full bg-[#0b0c10]/90 backdrop-blur-md z-50 border-b border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-wider text-[#66fcf1]">CREATIVE.REELS</a>
-            <nav class="flex gap-8 text-sm font-medium tracking-wide">
-                <a href="#work" class="hover:text-[#66fcf1] transition">Selected Work</a>
-                <a href="#about" class="hover:text-[#66fcf1] transition">About Me</a>
-                <a href="#contact" class="hover:text-[#66fcf1] transition">Contact</a>
+    <!-- Top Navigation Bar (Fixed at top) -->
+    <header class="fixed top-0 left-0 w-full bg-[#1c1d26]/90 backdrop-blur-md z-50 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-white font-black tracking-wider uppercase text-lg">Landed</a>
+            <nav class="flex gap-6 text-xs font-bold tracking-widest uppercase">
+                <a href="#work" class="text-white hover:text-[#e44c65] transition">Work</a>
+                <a href="#contact" class="text-gray-400 hover:text-[#e44c65] transition">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-40 pb-20 max-w-4xl mx-auto px-6 text-center">
-        <span class="text-[#66fcf1] text-xs font-semibold uppercase tracking-widest bg-[#66fcf1]/10 px-3 py-1 rounded-full">Available for freelance & contract</span>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-6 tracking-tight leading-none">
-            Crafting visual stories with <span class="text-[#66fcf1]">impact and precision.</span>
-        </h1>
-        <p class="text-lg md:text-xl text-gray-400 mt-6 max-w-2xl mx-auto">
-            Hi, I'm a professional video editor and filmmaker specializing in high-energy commercial spots, music videos, and cinematic brand documentaries.
-        </p>
-        <div class="mt-10 flex justify-center gap-4">
-            <a href="#work" class="bg-[#66fcf1] text-black font-semibold px-6 py-3 rounded shadow-lg hover:bg-[#45a29e] transition">View Showreel</a>
-            <a href="#contact" class="border border-gray-700 hover:border-gray-500 px-6 py-3 rounded transition">Let's Work Together</a>
+    <!-- Banner / Hero Section (Matches the high-impact top of Landed) -->
+    <section class="relative pt-40 pb-24 text-center border-b border-white/10 overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(28, 29, 38, 0.75), rgba(28, 29, 38, 0.95)), url('https://unsplash.com');">
+        <div class="max-w-3xl mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-wider leading-tight">
+                The future has landed
+            </h1>
+            <p class="text-base md:text-lg text-gray-400 mt-4 max-w-xl mx-auto leading-relaxed">
+                Welcome to my creative space. I specialize in high-energy commercial spots, cinematic color grading, and dynamic narrative pacing.
+            </p>
+            <div class="mt-8">
+                <a href="#work" class="inline-block bg-[#e44c65] hover:bg-[#d33c54] text-white text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded transition">
+                    View Featured Work
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Selected Work / Video Showcase Grid -->
-    <section id="work" class="max-w-6xl mx-auto px-6 py-20 border-t border-gray-900">
-        <h2 class="text-2xl font-bold text-white mb-2 tracking-wide">Selected Showcases</h2>
-        <p class="text-sm text-gray-400 mb-10">Click on any project card to watch the video live.</p>
+    <!-- Work Showcases (Matches the asymmetrical "Spotlight" alternating rows of Landed) -->
+    <main id="work" class="max-w-5xl mx-auto px-6 py-16 space-y-16">
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <!-- Video Project Card 1 -->
-            <div class="video-card cursor-pointer group" onclick="openModal('https://youtube.com')">
-                <div class="relative overflow-hidden rounded-lg bg-gray-900 aspect-video mb-4 border border-gray-800">
-                    <!-- Thumbnail Image placeholder -->
-                    <img src="https://unsplash.com" alt="Commercial Reel Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <!-- Play Overlay -->
-                    <div class="play-overlay absolute inset-0 bg-black/50 opacity-0 flex items-center justify-center transition-opacity duration-300">
-                        <div class="bg-[#66fcf1] p-4 rounded-full text-black shadow-lg">
-                            <svg xmlns="http://w3.org" fill="currentColor" class="w-6 h-6 transform translate-x-0.5" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-2">
-                    <span class="text-[10px] bg-gray-800 text-gray-300 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Commercial</span>
-                    <span class="text-[10px] bg-cyan-950 text-cyan-400 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Editing & Color</span>
-                </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-[#66fcf1] transition">Cyberpunk Street Fashion Brand Film</h3>
-                <p class="text-sm text-gray-400 mt-1">High-pace narrative editing mixed with dynamic speed ramps and color grading.</p>
-            </div>
-
-            <!-- Video Project Card 2 -->
-            <div class="video-card cursor-pointer group" onclick="openModal('https://youtube.com')">
-                <div class="relative overflow-hidden rounded-lg bg-gray-900 aspect-video mb-4 border border-gray-800">
-                    <img src="https://unsplash.com" alt="Nature Reel Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="play-overlay absolute inset-0 bg-black/50 opacity-0 flex items-center justify-center transition-opacity duration-300">
-                        <div class="bg-[#66fcf1] p-4 rounded-full text-black shadow-lg">
-                            <svg xmlns="http://w3.org" fill="currentColor" class="w-6 h-6 transform translate-x-0.5" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-2">
-                    <span class="text-[10px] bg-gray-800 text-gray-300 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Documentary</span>
-                    <span class="text-[10px] bg-cyan-950 text-cyan-400 font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Sound Design</span>
-                </div>
-                <h3 class="text-lg font-bold text-white group-hover:text-[#66fcf1] transition">Chasing Horizons — Cinematic Travel</h3>
-                <p class="text-sm text-gray-400 mt-1">Soundscapes and immersive environmental mixing paired with drone visuals.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Section & Tool Stack -->
-    <section id="about" class="bg-[#1f2833]/30 border-y border-gray-900 py-20">
-        <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-            <div class="md:col-span-2">
-                <h2 class="text-2xl font-bold text-white mb-4">The Creative Behind the Cut</h2>
+        <!-- Video Spotlight Row 1 (Video Right, Text Left) -->
+        <section class="flex flex-col md:flex-row items-center gap-10 border-b border-white/5 pb-16">
+            <div class="w-full md:w-1/2 order-2 md:order-1">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight mb-4">Commercial Brand Story</h2>
                 <p class="text-gray-400 leading-relaxed mb-4">
-                    I bring a keen eye for pacing, rhythmic cutting, and narrative cohesion. Over the past few years, I have collaborated with agencies and independent brands to formulate workflows that elevate raw content into cinematic marketing tools.
+                    High-pace narrative editing mixed with dynamic speed ramps and stylized commercial layouts. This spotlight frame mirrors the classic text alignments inside Landed.
                 </p>
-                <p class="text-gray-400 leading-relaxed">
-                    Based globally out of my dynamic video suite, available for remote post-production contracts.
+                <div class="text-xs font-bold uppercase tracking-wider text-[#e44c65]">
+                    Role: Lead Editor & Colorist
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 order-1 md:order-2">
+                <!-- Embedded Responsive Video Player Box -->
+                <div class="relative overflow-hidden rounded-lg aspect-video shadow-2xl border border-white/10">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Spotlight Row 2 (Video Left, Text Right) -->
+        <section class="flex flex-col md:flex-row items-center gap-10 border-b border-white/5 pb-16">
+            <div class="w-full md:w-1/2">
+                <!-- Embedded Responsive Video Player Box -->
+                <div class="relative overflow-hidden rounded-lg aspect-video shadow-2xl border border-white/10">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-2xl font-extrabold text-white tracking-tight mb-4">Cinematic Travel Documentary</h2>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                    Immersive environmental audio setups mixed directly with rich sweeping vistas. Styled with clean padding systems to stay completely responsive across desktop screens and phones.
                 </p>
+                <div class="text-xs font-bold uppercase tracking-wider text-[#e44c65]">
+                    Role: Director & Sound Designer
+                </div>
             </div>
-            <div>
-                <h3 class="text-sm font-semibold uppercase tracking-widest text-[#66fcf1] mb-4">Software Toolkit</h3>
-                <ul class="space-y-2 text-sm">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#66fcf1] rounded-full"></span> Adobe Premiere Pro</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#66fcf1] rounded-full"></span> DaVinci Resolve Studio</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#66fcf1] rounded-full"></span> Adobe After Effects</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#66fcf1] rounded-full"></span> Avid Media Composer</li>
-                </ul>
-            </div>
+        </section>
+
+    </main>
+
+    <!-- Contact CTA Footer Section (Matches Landed's lower block style) -->
+    <section id="contact" class="bg-landed-panel text-center py-16 border-t border-white/10">
+        <div class="max-w-xl mx-auto px-6">
+            <h2 class="text-2xl font-extrabold text-white uppercase tracking-wider mb-2">Get In Touch</h2>
+            <p class="text-gray-400 mb-8 text-sm">Ready to bring your next visual production project to life?</p>
+            
+            <a href="mailto:yourname@example.com" class="inline-block border border-white/20 hover:border-[#e44c65] text-white font-bold tracking-widest text-xs uppercase px-8 py-3.5 rounded transition">
+                yourname@example.com
+            </a>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="max-w-3xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-2xl font-bold text-white mb-4">Ready to start your project?</h2>
-        <p class="text-gray-400 mb-8">Drop me an email or trace my social feeds to stay connected.</p>
-        <a href="mailto:yourname@example.com" class="text-xl md:text-2xl font-semibold text-[#66fcf1] hover:underline tracking-wide">
-            yourname@example.com
-        </a>
-        <div class="mt-8 flex justify-center gap-6 text-sm text-gray-500">
-            <a href="https://youtube.com" class="hover:text-white transition">YouTube</a>
-            <a href="https://vimeo.com" class="hover:text-white transition">Vimeo</a>
-            <a href="https://linkedin.com" class="hover:text-white transition">LinkedIn</a>
-        </div>
-    </section>
+    <!-- Footer Copyright Tag -->
+    <footer class="text-center py-8 text-xs text-gray-600 bg-landed-dark">
+        <p>&copy; Untitled. Design based on Landed via HTML5 UP.</p>
+    </footer>
 
-    <!-- Video Modal Popup Engine -->
-    <div id="videoModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm hidden items-center justify-center p-4">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-3xl font-light">&times;</button>
-        <div class="w-full max-w-4xl aspect-video bg-black rounded shadow-2xl overflow-hidden">
-            <iframe id="modalPlayer" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Scripting for Video Modal Functionality -->
-    <script>
-        const modal = document.getElementById('videoModal');
-        const player = document.getElementById('modalPlayer');
-
-        function openModal(embedUrl) {
-            player.src = embedUrl;
+</body>
+</html>
